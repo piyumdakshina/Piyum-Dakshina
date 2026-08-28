@@ -1,0 +1,17 @@
+.git
+node_modules
+.next
+.vercel
+venv
+.venv
+__pycache__
+bin
+obj
+dist
+build
+target
+.cache
+.local
+.vscode
+.idea
+.DS_Store

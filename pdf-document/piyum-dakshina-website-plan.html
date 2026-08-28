@@ -1,0 +1,264 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Piyum Dakshina – Complete Website Plan</title>
+<style>
+  @page { margin: 20mm 15mm; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; color: #1a1a2e; line-height: 1.7; background: #f8f9fc; padding: 40px; }
+  .container { max-width: 900px; margin: 0 auto; background: #fff; padding: 60px 50px; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+  h1 { font-size: 2.4em; color: #0b0f19; border-bottom: 4px solid #00d4ff; padding-bottom: 15px; margin-bottom: 25px; }
+  h2 { font-size: 1.6em; color: #0b0f19; margin: 35px 0 15px; padding-left: 12px; border-left: 4px solid #7c3aed; }
+  h3 { font-size: 1.2em; color: #1a2330; margin: 20px 0 10px; }
+  p { margin: 10px 0; color: #333; }
+  ul, ol { margin: 12px 0; padding-left: 28px; }
+  li { margin: 6px 0; }
+  .header { text-align: center; margin-bottom: 40px; padding: 40px 20px; background: linear-gradient(135deg, #0b0f19, #1a2330); border-radius: 12px; color: #fff; }
+  .header h1 { font-size: 2.8em; color: #fff; border: none; padding: 0; margin: 0 0 10px; }
+  .header p { font-size: 1.1em; color: #94a3b8; }
+  .badge { display: inline-block; background: linear-gradient(135deg, #00d4ff, #7c3aed); color: #fff; padding: 4px 14px; border-radius: 20px; font-size: 0.8em; font-weight: 600; margin: 4px; }
+  .card { background: #f1f5f9; border-radius: 10px; padding: 20px; margin: 15px 0; border: 1px solid #e2e8f0; }
+  .card h3 { margin-top: 0; color: #00d4ff; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.9em; }
+  th, td { border: 1px solid #e2e8f0; padding: 10px 14px; text-align: left; }
+  th { background: #0b0f19; color: #fff; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .code-block { background: #0b0f19; color: #e2e8f0; padding: 16px 20px; border-radius: 8px; font-family: 'Cascadia Code', 'Fira Code', monospace; font-size: 0.85em; overflow-x: auto; margin: 15px 0; }
+  .footer { text-align: center; margin-top: 50px; padding-top: 30px; border-top: 2px solid #e2e8f0; color: #94a3b8; font-size: 0.9em; }
+  .page-break { page-break-before: always; }
+  @media print { body { padding: 0; background: #fff; } .container { box-shadow: none; padding: 40px; } }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+  <h1>PIYUM DAKSHINA</h1>
+  <p>Complete Digital Platform Plan — Architecture, Design & Implementation Roadmap</p>
+  <div><span class="badge">Payload CMS</span><span class="badge">Next.js</span><span class="badge">Obsidian Teal</span><span class="badge">AI Agent</span></div>
+</div>
+
+<h2>1. The Vision</h2>
+<p><strong>"I want to be the man that one day a child says: 'I want to be like Piyum.'"</strong></p>
+<p>This document outlines the complete architecture of Piyum Dakshina's digital presence — a permanent, self-owned platform that showcases his journey, projects, philosophy, and achievements. Built on Payload CMS with a stunning dark-themed UI inspired by the best modern web experiences.</p>
+
+<h2>2. Technology Stack</h2>
+<table>
+  <tr><th>Layer</th><th>Technology</th><th>Purpose</th></tr>
+  <tr><td>Framework</td><td>Next.js + App Router</td><td>Fullstack React framework</td></tr>
+  <tr><td>CMS / Backend</td><td>Payload CMS</td><td>Headless CMS, API, Admin Panel</td></tr>
+  <tr><td>Database</td><td>PostgreSQL (Neon/Supabase)</td><td>Data persistence</td></tr>
+  <tr><td>Styling</td><td>Tailwind CSS + Shadcn/ui</td><td>Utility-first styling</td></tr>
+  <tr><td>Language</td><td>TypeScript</td><td>Type safety</td></tr>
+  <tr><td>Hosting</td><td>Vercel / Cloudflare</td><td>Deployment</td></tr>
+  <tr><td>File Storage</td><td>Vercel Blob / Cloudflare R2</td><td>Media assets</td></tr>
+</table>
+
+<h2>3. Design System — Obsidian Teal</h2>
+<h3>Color Palette</h3>
+<table>
+  <tr><th>Color</th><th>Hex</th><th>Usage</th></tr>
+  <tr><td style="background:#0b0f19;color:#fff;">Deep Obsidian</td><td>#0B0F19</td><td>Primary background</td></tr>
+  <tr><td style="background:#141b24;color:#fff;">Surface Dark</td><td>#141B24</td><td>Cards, panels</td></tr>
+  <tr><td style="background:#00d4ff;color:#000;">Cyan / Teal</td><td>#00D4FF</td><td>Primary accent (buttons, links)</td></tr>
+  <tr><td style="background:#7c3aed;color:#fff;">Purple</td><td>#7C3AED</td><td>Secondary accent</td></tr>
+  <tr><td style="background:#e2e8f0;color:#000;">Light Gray</td><td>#E2E8F0</td><td>Body text</td></tr>
+  <tr><td style="background:rgba(255,255,255,0.05);color:#fff;">Glass</td><td>rgba(255,255,255,0.05)</td><td>Glassmorphism</td></tr>
+</table>
+
+<h3>Design Principles</h3>
+<ul>
+  <li><strong>Dark & Premium:</strong> Deep obsidian background creates a serious, professional feel</li>
+  <li><strong>Tech & Intelligence:</strong> Cyan/teal accents represent innovation and a bright future</li>
+  <li><strong>Creativity & Ambition:</strong> Purple accents show unique creative identity</li>
+  <li><strong>Glassmorphism:</strong> Frosted glass cards with backdrop blur for modern aesthetic</li>
+  <li><strong>Glow Effects:</strong> Subtle cyan glow on interactive elements</li>
+  <li><strong>Gradients:</strong> Cyan-to-purple gradients for visual depth</li>
+</ul>
+
+<div class="page-break"></div>
+
+<h2>4. Collections (Content Architecture)</h2>
+
+<div class="card">
+<h3>📂 Projects Collection</h3>
+<p><strong>Fields:</strong> Title, Slug, Featured Image, Gallery, Description (Rich Text), Tech Stack, Status, Project Type, Achievement, Links (GitHub, Live URL), Dates</p>
+<p><strong>Projects:</strong> AegisVue, LEAP, VR Chemistry Lab, Other Builds (LMS, Trading Tool, Garments RM, Spyware, Websites)</p>
+</div>
+
+<div class="card">
+<h3>📄 Pages Collection</h3>
+<p><strong>Fields:</strong> Title, Slug, Hero Section, Content (Rich Text), SEO Title, SEO Description, Featured Image</p>
+<p><strong>Pages:</strong> Home, About, Projects, Philosophy (3 Core Thoughts), Athletics, Contact</p>
+</div>
+
+<div class="card">
+<h3>🔗 Links Collection</h3>
+<p><strong>Fields:</strong> Title, URL, Icon, Order, Category</p>
+<p><strong>Platforms:</strong> YouTube, Instagram, Facebook, LinkedIn, TikTok, Pinterest, Scribd, Past Papers Forum, LEAP Web App, WhatsApp Group/Channel, Beacons.ai</p>
+</div>
+
+<div class="card">
+<h3>💬 Feedback Collection</h3>
+<p><strong>Fields:</strong> Name, Email, Subject, Message, Status, Date</p>
+</div>
+
+<div class="card">
+<h3>👤 Users Collection</h3>
+<p>Admin-only access with full CRUD permissions. Multi-Factor Authentication recommended.</p>
+</div>
+
+<h2>5. Page Architecture</h2>
+
+<h3>Home Page</h3>
+<ul>
+  <li>Hero section with tagline "I want to be the man that one day a child says: 'I want to be like Piyum.'"</li>
+  <li>Quick overview — 3 core thoughts as cards (Information is Wealth, Protect Dignity, Break Barriers)</li>
+  <li>Projects preview grid (AegisVue, LEAP, VR Chemistry Lab)</li>
+  <li>Call-to-action links</li>
+</ul>
+
+<h3>About Page</h3>
+<ul>
+  <li>Full biography — born March 30, 2008, Ragama Teaching Hospital</li>
+  <li>Self-taught developer journey (no paid courses, no mentors)</li>
+  <li>Education: Grade 12 Mathematics stream, dream of University of Moratuwa</li>
+  <li>Philosophy statement</li>
+</ul>
+
+<h3>Projects Page</h3>
+<ul>
+  <li>Detailed project cards with images, tech stacks, achievements</li>
+  <li>AegisVue — the flagship solo product (digital safety platform)</li>
+  <li>LEAP — AI career stereotype breaker (1st Runner-Up @ HackX Junior)</li>
+  <li>VR Chemistry Lab — Arduino gloves (1st Runner-Up with cash prize)</li>
+  <li>Other builds showcase</li>
+</ul>
+
+<div class="page-break"></div>
+
+<h3>Philosophy Page — The Three Core Thoughts</h3>
+<div class="card">
+<h3>1. Information is Wealth</h3>
+<p>"Knowledge is the only currency that multiplies when shared. Every student, every worker, every citizen deserves access to information that can change their life."</p>
+</div>
+<div class="card">
+<h3>2. Protect Human Dignity</h3>
+<p>"Technology should never exploit — it should protect. AegisVue exists because families, students, and workers deserve safety without paying a ransom."</p>
+</div>
+<div class="card">
+<h3>3. Break Barriers, Build Bridges</h3>
+<p>"Stereotypes tell people 'you can't.' LEAP exists to say 'you can.' I build to break invisible walls and create pathways where none existed."</p>
+</div>
+
+<h3>Athletics Page</h3>
+<ul>
+  <li>National-level sprinter (100m PB: 11.7s)</li>
+  <li>Achievements: School #1, Zonal/Divisional/Provincial levels, John Tarbet Semi-finals</li>
+  <li>Long-distance: 400m, 800m, 3000m, 5000m</li>
+  <li>Life lessons: discipline, focus, perseverance</li>
+</ul>
+
+<h2>6. Advanced Plugins & Features</h2>
+
+<table>
+  <tr><th>Plugin</th><th>Purpose</th></tr>
+  <tr><td>AI Agent (payload-ai-agent)</td><td>Natural language admin commands — "Change hero image," "List unpublished projects"</td></tr>
+  <tr><td>Advanced SEO</td><td>JSON-LD structured data, Open Graph images, hreflang tags</td></tr>
+  <tr><td>SEO Diagnostics</td><td>Audit titles, descriptions, images across all content</td></tr>
+  <tr><td>Analytics Dashboard</td><td>GA4-backed KPIs, traffic sources, top pages, conversions</td></tr>
+  <tr><td>One-Click Deploy</td><td>"Publish Changes" button from admin panel</td></tr>
+  <tr><td>Import/Export</td><td>Content backups and migration</td></tr>
+</table>
+
+<h2>7. Deployment & Costs</h2>
+<table>
+  <tr><th>Service</th><th>Free Tier</th><th>Paid (Scaling)</th></tr>
+  <tr><td>Payload CMS</td><td>$0 (MIT licensed)</td><td>$0</td></tr>
+  <tr><td>Hosting (Vercel)</td><td>$0</td><td>~$20/mo</td></tr>
+  <tr><td>Database (Neon)</td><td>$0</td><td>~$19/mo</td></tr>
+  <tr><td>File Storage</td><td>$0</td><td>~$5/mo</td></tr>
+  <tr><td>Domain Name</td><td>~$12/yr</td><td>~$12/yr</td></tr>
+  <tr><td><strong>Total</strong></td><td><strong>$0 to start</strong></td><td><strong>~$40-50/mo</strong></td></tr>
+</table>
+
+<div class="page-break"></div>
+
+<h2>8. LEAP Project — AI Career Stereotype Breaker</h2>
+
+<div class="card">
+<p><strong>LEAP</strong> is an AI-powered platform designed to break career stereotypes in Sri Lankan schools. It features a 3-tab application:</p>
+<ul>
+  <li><strong>Share Your Story:</strong> Anonymous sharing of experiences and aspirations</li>
+  <li><strong>Daily Challenge:</strong> Career exploration challenges</li>
+  <li><strong>Job Explorer:</strong> AI-driven career discovery</li>
+</ul>
+<p><strong>Achievement:</strong> 1st Runner-Up @ HackX Junior — University of Kelaniya</p>
+<p><strong>Tech Stack:</strong> Python, React, Supabase, Vercel, Groq AI, DeepSeek AI</p>
+<p><strong>Impact:</strong> Proved 30% reduction in career stereotypes. Collected 50+ anonymous stories.</p>
+</div>
+
+<h2>9. Implementation Roadmap</h2>
+
+<h3>Phase 1: Foundation (Day 1)</h3>
+<ul>
+  <li>Install Next.js + Payload CMS</li>
+  <li>Configure database</li>
+  <li>Run initial migration</li>
+  <li>Create admin account</li>
+</ul>
+
+<h3>Phase 2: Collections (Days 2-3)</h3>
+<ul>
+  <li>Define all collections with fields</li>
+  <li>Set up relationships and access control</li>
+</ul>
+
+<h3>Phase 3: Content (Days 4-5)</h3>
+<ul>
+  <li>Add all pages, projects, links</li>
+  <li>Upload media with SEO-optimized filenames</li>
+</ul>
+
+<h3>Phase 4: Plugins (Day 6)</h3>
+<ul>
+  <li>Install AI Agent, SEO, Analytics, Import/Export</li>
+</ul>
+
+<h3>Phase 5: Deploy (Day 7)</h3>
+<ul>
+  <li>Connect to Vercel/Netlify</li>
+  <li>Set environment variables</li>
+  <li>Submit to Google Search Console</li>
+</ul>
+
+<h3>Phase 6: Launch & Grow (Ongoing)</h3>
+<ul>
+  <li>Publish blog posts</li>
+  <li>Add new projects</li>
+  <li>Monitor analytics</li>
+  <li>Build AegisVue, prepare for A/Ls</li>
+</ul>
+
+<h2>10. Image SEO Strategy</h2>
+<p>All images renamed with descriptive filenames:</p>
+<ul>
+  <li><code>piyum-dakshina-profile.jpg</code></li>
+  <li><code>piyum-dakshina-aegisvue-1.jpg</code></li>
+  <li><code>piyum-dakshina-leap-1.jpg</code></li>
+  <li><code>piyum-dakshina-vr-lab-1.jpg</code></li>
+  <li><code>piyum-dakshina-running-1.jpg</code></li>
+</ul>
+<p>Each image includes descriptive alt text for accessibility and SEO.</p>
+
+<h2>11. The Legacy</h2>
+<p>The website is designed as a permanent digital footprint that will remain relevant for 3-5 years with minimal updates. It's built to be crawled by Google and AI models (ChatGPT, Perplexity, Gemini) to ensure Piyum Dakshina's name is permanently associated with his work and philosophy.</p>
+
+<div class="footer">
+  <p>Generated: July 29, 2026 | Piyum Dakshina — Complete Digital Platform Plan</p>
+  <p>Built with Payload CMS + Next.js + Obsidian Teal Design System</p>
+</div>
+
+</div>
+</body>
+</html>

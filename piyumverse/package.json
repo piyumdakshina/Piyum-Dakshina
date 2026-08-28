@@ -1,0 +1,38 @@
+{
+  "name": "piyumverse",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The Piyumverse — permanent digital identity of Piyum Dakshina. Self-taught developer, entrepreneur & dreamer from Sri Lanka.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "seed": "node scripts/seed.ts",
+    "types": "node scripts/generate-types.ts",
+    "start-all": "node scripts/start-all.mjs"
+  },
+  "dependencies": {
+    "@next/swc-win32-x64-msvc": "^16.2.12",
+    "@payloadcms/db-sqlite": "^3.86.0",
+    "@payloadcms/next": "^3.86.0",
+    "@payloadcms/richtext-lexical": "^3.86.0",
+    "animejs": "^4.5.0",
+    "dotenv": "^17.4.2",
+    "next": "^16.2.12",
+    "payload": "^3.86.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "sharp": "^0.35.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^20.19.43",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.2.12",
+    "postcss": "^8.5.24",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.3"
+  }
+}

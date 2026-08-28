@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The Piyumverse — System Documentation</title>
+<style>
+  @page { margin: 2cm; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    color: #1a1a2e;
+    background: #fff;
+    line-height: 1.7;
+    font-size: 11pt;
+    padding: 0;
+  }
+  .cover {
+    text-align: center;
+    padding: 100px 40px 60px;
+    background: linear-gradient(135deg, #0B0F19 0%, #141B24 50%, #1a1a2e 100%);
+    color: #fff;
+    page-break-after: always;
+  }
+  .cover h1 {
+    font-size: 42pt;
+    font-weight: 700;
+    letter-spacing: 2px;
+    background: linear-gradient(135deg, #00D4FF, #7C3AED);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+  }
+  .cover .subtitle {
+    font-size: 18pt;
+    color: #E2E8F0;
+    margin-bottom: 30px;
+  }
+  .cover .tagline {
+    font-size: 14pt;
+    color: #00D4FF;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+    display: inline-block;
+  }
+  .cover .meta {
+    margin-top: 50px;
+    font-size: 10pt;
+    color: #94A3B8;
+  }
+  h2 {
+    font-size: 20pt;
+    color: #0B0F19;
+    border-bottom: 3px solid #00D4FF;
+    padding-bottom: 6px;
+    margin: 40px 0 20px;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 14pt;
+    color: #141B24;
+    margin: 25px 0 10px;
+    page-break-after: avoid;
+  }
+  h4 {
+    font-size: 12pt;
+    color: #333;
+    margin: 18px 0 8px;
+  }
+  p { margin-bottom: 10px; }
+  .section { margin-bottom: 30px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    font-size: 10pt;
+  }
+  th, td {
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #0B0F19;
+    color: #fff;
+    font-weight: 600;
+  }
+  tr:nth-child(even) { background: #f8fafc; }
+  code {
+    background: #f1f5f9;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 10pt;
+    font-family: 'Consolas', 'Courier New', monospace;
+    color: #7C3AED;
+  }
+  pre {
+    background: #0B0F19;
+    color: #E2E8F0;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-size: 9pt;
+    line-height: 1.5;
+    margin: 10px 0;
+  }
+  .card {
+    background: #f8fafc;
+    border-left: 4px solid #00D4FF;
+    padding: 12px 16px;
+    margin: 10px 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .card.purple { border-left-color: #7C3AED; }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 10px 0;
+  }
+  .grid-item {
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 12px;
+  }
+  .grid-item h4 { margin-top: 0; color: #0B0F19; }
+  .page-break { page-break-before: always; }
+  .footer {
+    text-align: center;
+    color: #94A3B8;
+    font-size: 9pt;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+  }
+  ul, ol { margin: 8px 0 8px 20px; }
+  li { margin-bottom: 4px; }
+  .badge {
+    display: inline-block;
+    background: #00D4FF;
+    color: #0B0F19;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 9pt;
+    font-weight: 600;
+  }
+  .badge.purple { background: #7C3AED; color: #fff; }
+</style>
+</head>
+<body>
+
+<!-- ==================== COVER ==================== -->
+<div class="cover">
+  <h1>THE PIYUMVERSE</h1>
+  <div class="subtitle">The Piyum Dakshina Digital Ecosystem</div>
+  <div class="tagline">Building with Dignity. Protecting with Humanity.</div>
+  <div class="meta">
+    <strong>Author:</strong> Piyum Dakshina<br>
+    <strong>Version:</strong> 1.0 — July 2026
+  </div>
+</div>
+
+<!-- ==================== TABLE OF CONTENTS ==================== -->
+<div style="page-break-before: always;">
+<h2 style="border-bottom: none; text-align: center; font-size: 24pt; margin-top: 0;">Table of Contents</h2>
+<table style="border: none; font-size: 11pt;">
+  <tr><td style="border: none; width: 30px;">1.</td><td style="border: none;">Core Philosophy &amp; System Identity</td></tr>
+  <tr><td style="border: none;">2.</td><td style="border: none;">Technical Foundation</td></tr>
+  <tr><td style="border: none;">3.</td><td style="border: none;">System Architecture</td></tr>
+  <tr><td style="border: none;">4.</td><td style="border: none;">Collections — Content Types</td></tr>
+  <tr><td style="border: none;">5.</td><td style="border: none;">Advanced Features &amp; Plugins</td></tr>
+  <tr><td style="border: none;">6.</td><td style="border: none;">Design System: Obsidian Teal</td></tr>
+  <tr><td style="border: none;">7.</td><td style="border: none;">Deployment &amp; Infrastructure</td></tr>
+  <tr><td style="border: none;">8.</td><td style="border: none;">Differentiation &amp; Branding</td></tr>
+  <tr><td style="border: none;">9.</td><td style="border: none;">Summary — System Component Map</td></tr>
+  <tr><td style="border: none;">10.</td><td style="border: none;">Vision &amp; Legacy</td></tr>
+</table>
+</div>
+
+<!-- ==================== 1. CORE PHILOSOPHY ==================== -->
+<div class="page-break"></div>
+<h2>1. Core Philosophy &amp; System Identity</h2>
+
+<div class="section">
+  <table>
+    <tr><th>Aspect</th><th>Definition</th></tr>
+    <tr>
+      <td><strong>What It Is</strong></td>
+      <td>A self-hosted, fully customizable digital platform that consolidates identity, projects, philosophy, and online presence into one unified system.</td>
+    </tr>
+    <tr>
+      <td><strong>Why It Exists</strong></td>
+      <td>To ensure the name <em>Piyum Dakshina</em> is permanently etched into the internet — unshakeable, searchable, and under complete control.</td>
+    </tr>
+    <tr>
+      <td><strong>Core Philosophy</strong></td>
+      <td>"Information is Wealth." &bull; "Protect Human Dignity." &bull; "Break Barriers, Build Bridges."</td>
+    </tr>
+  </table>
+
+  <h3>System Naming</h3>
+  <table>
+    <tr><th>Name</th><th>Usage</th></tr>
+    <tr><td>The Piyumverse</td><td>Brand name for the entire ecosystem</td></tr>
+    <tr><td>The Piyum Dakshina Digital Ecosystem</td><td>Official full system name</td></tr>
+    <tr><td>Piyumverse</td><td>Short form / domain alias</td></tr>
+  </table>
+</div>
+
+<!-- ==================== 2. TECHNICAL FOUNDATION ==================== -->
+<div class="page-break"></div>
+<h2>2. Technical Foundation</h2>
+
+<div class="section">
+  <h3>A. Next.js 15 — The Frontend Framework</h3>
+  <p>The Piyumverse is built on <strong>Next.js 15</strong>, the industry-standard React framework for production-grade web applications.</p>
+  <table>
+    <tr><th>Feature</th><th>How It Powers the System</th></tr>
+    <tr><td>App Router</td><td>File-system based routing where folders define routes. Pages like <code>/about</code>, <code>/projects</code>, and <code>/philosophy</code> are simply folders in the codebase.</td></tr>
+    <tr><td>Server Components</td><td>Pages render on the server, delivering faster load times, better SEO, and less JavaScript sent to the browser.</td></tr>
+    <tr><td>Server Actions</td><td>Replace traditional API routes for form submissions and data mutations. The contact form sends messages directly to the database without writing a separate API.</td></tr>
+    <tr><td>Turbopack</td><td>Faster builds and hot-reloads during development.</td></tr>
+  </table>
+  <div class="card">
+    <strong>Why Next.js:</strong> SEO-first (Google crawls every page instantly), performance-optimized even on mobile networks in Sri Lanka, and scales effortlessly as features grow.
+  </div>
+
+  <h3>B. Payload CMS 3 — The Backbone</h3>
+  <p>Payload is the first-ever <strong>Next.js native CMS</strong>. It installs directly into the <code>/app</code> folder and runs in the same Node process as the Next.js application.</p>
+  <table>
+    <tr><th>Feature</th><th>What It Means</th></tr>
+    <tr><td>Code-First</td><td>Database schema, admin interface, and API are all defined through TypeScript configurations. No clicking around a UI to build data models.</td></tr>
+    <tr><td>Full TypeScript Backend</td><td>Auto-generated REST and GraphQL APIs with complete type safety.</td></tr>
+    <tr><td>Admin Panel</td><td>Powerful, customizable dashboard for managing all content.</td></tr>
+    <tr><td>Self-Hosted</td><td>Deploy to Vercel, Railway, or any platform. No third-party CMS controls the data.</td></tr>
+    <tr><td>Free &amp; Open Source</td><td>MIT licensed — full ownership of the entire system.</td></tr>
+  </table>
+  <div class="card purple">
+    <strong>Why Payload:</strong> Zero vendor lock-in (move anywhere, anytime), complete control over every field and relationship, and a single codebase for CMS and website.
+  </div>
+</div>
+
+<!-- ==================== 3. SYSTEM ARCHITECTURE ==================== -->
+<div class="page-break"></div>
+<h2>3. System Architecture</h2>
+
+<div class="section">
+  <p>The architecture follows a three-tier model: Visitor-Facing Frontend, Payload Admin Backend, and PostgreSQL Database.</p>
+
+  <pre>
+┌─────────────────────────────────────────────────────────────┐
+│               THE PIYUMVERSE (Visitors Layer)               │
+│  ┌──────┐ ┌──────┐ ┌────────┐ ┌────────┐ ┌───────┐       │
+│  │ HOME │ │ABOUT │ │PROJECTS│ │PHILO- │ │CONTACT│       │
+│  │      │ │      │ │        │ │ SOPHY │ │       │       │
+│  │ Hero │ │Story │ │AegisVue│ │3 Core │ │Links  │       │
+│  │Tagln │ │Edu.  │ │LEAP    │ │Ideas  │ │Email  │       │
+│  └──────┘ └──────┘ └────────┘ └────────┘ └───────┘       │
+│  All content pulled via Payload REST / GraphQL API         │
+└─────────────────────┬───────────────────────────────────────┘
+                      │
+┌─────────────────────▼───────────────────────────────────────┐
+│              PAYLOAD CMS (Admin Panel)                      │
+│  ┌──────────────────────────────────────────────────────┐  │
+│  │  DASHBOARD: Recent activity, stats, widgets          │  │
+│  ├──────────────────────────────────────────────────────┤  │
+│  │  AEGISVUE BUTLER: AI-powered admin assistant         │  │
+│  ├──────────────────────────────────────────────────────┤  │
+│  │  COLLECTIONS: Projects, Pages, Links, Feedback,      │  │
+│  │               Media, Users                           │  │
+│  └──────────────────────────────────────────────────────┘  │
+└─────────────────────────┬───────────────────────────────────┘
+                          │
+┌─────────────────────────▼───────────────────────────────────┐
+│  DATABASE — PostgreSQL (Neon / Supabase / Railway)          │
+│  Tables: projects | pages | links | feedback | media        │
+│          | users                                             │
+└─────────────────────────────────────────────────────────────┘</pre>
+
+  <h3>Data Flow</h3>
+  <ol>
+    <li>Visitor requests a page (e.g., <code>/projects/aegisvue</code>)</li>
+    <li>Next.js Server Component fetches data from Payload's Local API</li>
+    <li>Payload queries the PostgreSQL database</li>
+    <li>Data is returned as typed JSON and rendered into HTML on the server</li>
+    <li>HTML is sent to the browser — fully indexed by search engines</li>
+  </ol>
+</div>
+
+<!-- ==================== 4. COLLECTIONS ==================== -->
+<div class="page-break"></div>
+<h2>4. Collections — Content Types</h2>
+
+<div class="section">
+  <p>Collections are Payload's way of organizing content. Each collection becomes a section of the admin panel and a data source for the frontend.</p>
+
+  <h3>A. Projects Collection</h3>
+  <table>
+    <tr><th>Field</th><th>Type</th><th>Purpose</th></tr>
+    <tr><td>Title</td><td>Text</td><td>Project name (e.g., "AegisVue")</td></tr>
+    <tr><td>Slug</td><td>Text (auto)</td><td>URL: /projects/aegisvue</td></tr>
+    <tr><td>Featured Image</td><td>Upload</td><td>Hero image for the project page</td></tr>
+    <tr><td>Gallery</td><td>Array of Uploads</td><td>Multiple images showing the project</td></tr>
+    <tr><td>Description</td><td>Rich Text</td><td>Detailed explanation with formatting</td></tr>
+    <tr><td>Tech Stack</td><td>Array of Text</td><td>Technologies used</td></tr>
+    <tr><td>Status</td><td>Select</td><td>In Development, Production, Completed</td></tr>
+    <tr><td>Project Type</td><td>Select</td><td>Solo, Team Project, Competition</td></tr>
+    <tr><td>Achievement</td><td>Text</td><td>Awards or recognition received</td></tr>
+    <tr><td>Links</td><td>Group</td><td>GitHub URL, Live URL, Competition URL</td></tr>
+    <tr><td>Date Created</td><td>Date</td><td>When the project started</td></tr>
+  </table>
+
+  <h4>Projects Included</h4>
+  <ul>
+    <li><strong>AegisVue</strong> — Solo product, foundation for the AI assistant</li>
+    <li><strong>LEAP</strong> — Team project, sole programmer role</li>
+    <li><strong>VR Chemistry Lab</strong> — Arduino gloves project, 1st Runner-Up @ HackX Junior</li>
+    <li><strong>Other Builds</strong> — LMS, trading signal tool, garments RM system, spyware detection tools</li>
+  </ul>
+
+  <h3>B. Pages Collection</h3>
+  <table>
+    <tr><th>Page</th><th>Content</th></tr>
+    <tr><td>Home</td><td>Hero section, tagline, quick overview, project previews</td></tr>
+    <tr><td>About</td><td>Full story, education, location, philosophy</td></tr>
+    <tr><td>Projects</td><td>Grid/list of all projects (auto-populated)</td></tr>
+    <tr><td>Philosophy</td><td>Three core thoughts, mission, definition of success</td></tr>
+    <tr><td>Athletics</td><td>Running achievements, personal bests</td></tr>
+    <tr><td>Contact</td><td>Social links, email, contact form</td></tr>
+  </table>
+
+  <h3>C. Links Collection</h3>
+  <table>
+    <tr><th>Platform</th><th>Username / URL</th></tr>
+    <tr><td>YouTube</td><td>@piyumdakshina369</td></tr>
+    <tr><td>Instagram</td><td>@piyum_dakshina</td></tr>
+    <tr><td>Facebook</td><td>piyum.dakshina</td></tr>
+    <tr><td>LinkedIn</td><td>piyumdakshina</td></tr>
+    <tr><td>TikTok</td><td>@piyum_dakshina_</td></tr>
+    <tr><td>Pinterest</td><td>piyumdakshina</td></tr>
+    <tr><td>LEAP Web App</td><td>g6pjgxc.s.gy/leap-app</td></tr>
+  </table>
+
+  <h3>D. Feedback / Contact Collection</h3>
+  <table>
+    <tr><th>Field</th><th>Purpose</th></tr>
+    <tr><td>Name</td><td>Who sent the message</td></tr>
+    <tr><td>Email</td><td>Their email address</td></tr>
+    <tr><td>Subject</td><td>What they're contacting about</td></tr>
+    <tr><td>Message</td><td>Full message content</td></tr>
+    <tr><td>Status</td><td>Unread, Read, Replied</td></tr>
+  </table>
+
+  <h3>E. Media Collection</h3>
+  <p>Stores all images, PDFs, and videos with SEO-optimized metadata (alt text, file names, captions).</p>
+
+  <h3>F. Users Collection</h3>
+  <p>Login system — only the admin (and any explicitly granted users) can access the panel.</p>
+</div>
+
+<!-- ==================== 5. ADVANCED FEATURES ==================== -->
+<div class="page-break"></div>
+<h2>5. Advanced Features &amp; Plugins</h2>
+
+<div class="section">
+  <h3>A. AegisVue Butler — AI Agent Plugin</h3>
+  <p>The <code>payload-ai-agent</code> plugin adds a floating chat assistant to the admin panel that turns natural-language commands into real panel actions. Branded as <strong>"AegisVue Butler"</strong> — Piyum's custom J.A.R.V.I.S. for website management.</p>
+
+  <table>
+    <tr><th>Command Type</th><th>Example</th></tr>
+    <tr><td>Bulk Updates</td><td>"Set all project statuses to 'Production'"</td></tr>
+    <tr><td>Content Search</td><td>"Find all projects with the tag 'AI'"</td></tr>
+    <tr><td>Content Creation</td><td>"Create a new project called 'AegisVue' with description..."</td></tr>
+    <tr><td>Content Editing</td><td>"Rewrite this project description in a professional tone"</td></tr>
+    <tr><td>Data Queries</td><td>"List all projects that have '1st Runner-Up' in achievements"</td></tr>
+  </table>
+
+  <div class="card">
+    <strong>How it works:</strong> Uses LLM tool calling on top of the Payload Local API. Every action runs with the exact permissions of the signed-in user. Bring your own AI provider (OpenAI, Anthropic, Google, Groq, Ollama).
+  </div>
+
+  <h3>B. Admin Panel Customization</h3>
+  <table>
+    <tr><th>Customization</th><th>Implementation</th></tr>
+    <tr><td>Colors &amp; Branding</td><td><code>@consilioweb/payload-admin-theme</code> plugin</td></tr>
+    <tr><td>Custom CSS</td><td>Stylesheet injected into admin config</td></tr>
+    <tr><td>Root Components</td><td>Custom React components swapped into admin views</td></tr>
+    <tr><td>Logo &amp; Login Page</td><td>White-label with Obsidian Teal branding; "Welcome back, Piyum."</td></tr>
+  </table>
+
+  <h3>C. SEO &amp; Analytics</h3>
+  <table>
+    <tr><th>Plugin</th><th>Purpose</th></tr>
+    <tr><td>Advanced SEO</td><td>JSON-LD structured data, auto-generated Open Graph images, sitemaps</td></tr>
+    <tr><td>SEO Diagnostics</td><td>Audits titles, descriptions, images, and headings across all content</td></tr>
+    <tr><td>Analytics Dashboard</td><td>Tracks users, sessions, pageviews, traffic sources, and conversions</td></tr>
+  </table>
+</div>
+
+<!-- ==================== 6. DESIGN SYSTEM ==================== -->
+<div class="page-break"></div>
+<h2>6. Design System: Obsidian Teal</h2>
+
+<div class="section">
+  <p>Obsidian Teal is the custom design language that makes The Piyumverse instantly recognizable. It reflects Piyum's personality: dark and premium, intelligent, creative, and forward-looking.</p>
+
+  <h3>Color Palette</h3>
+  <table>
+    <tr><th>Color Name</th><th>HEX</th><th>Usage</th></tr>
+    <tr><td>Deep Obsidian</td><td><code>#0B0F19</code></td><td>Background (main and sections)</td></tr>
+    <tr><td>Surface Dark</td><td><code>#141B24</code></td><td>Cards, panels, sidebars</td></tr>
+    <tr><td>Cyan / Teal</td><td><code>#00D4FF</code></td><td>Primary buttons, links, hover states</td></tr>
+    <tr><td>Purple / Violet</td><td><code>#7C3AED</code></td><td>Secondary accents, highlights</td></tr>
+    <tr><td>Light Gray</td><td><code>#E2E8F0</code></td><td>Body text</td></tr>
+    <tr><td>Glass Effect</td><td><code>rgba(255,255,255,0.05)</code> + backdrop-blur</td><td>Modern, sleek card surfaces</td></tr>
+  </table>
+
+  <h3>Design Principles</h3>
+  <table>
+    <tr><th>Principle</th><th>Implementation</th></tr>
+    <tr><td>Dark &amp; Premium</td><td>Deep obsidian background creates a serious, professional feel</td></tr>
+    <tr><td>Tech &amp; Intelligence</td><td>Cyan/teal accents represent innovation and a bright future</td></tr>
+    <tr><td>Creativity &amp; Ambition</td><td>Purple accents show uniqueness and originality</td></tr>
+    <tr><td>Readability</td><td>Light gray text on dark background is easy to read</td></tr>
+    <tr><td>Modern Aesthetic</td><td>Glassmorphism, smooth gradients, glowing hover states</td></tr>
+  </table>
+
+  <h3>Typography &amp; Voice</h3>
+  <ul>
+    <li><strong>Font:</strong> System font stack (Segoe UI, Helvetica Neue, Arial) for zero latency</li>
+    <li><strong>Voice:</strong> Professional yet personal — "I want to be like Piyum."</li>
+    <li><strong>Signature:</strong> Every page footer reads: "Built with Dignity by Piyum Dakshina."</li>
+  </ul>
+</div>
+
+<!-- ==================== 7. DEPLOYMENT ==================== -->
+<div class="page-break"></div>
+<h2>7. Deployment &amp; Infrastructure</h2>
+
+<div class="section">
+  <h3>One-Click Deployment Architecture</h3>
+  <p>The entire system deploys all-in-one on <strong>Vercel</strong> — one click deploys Payload with a Next.js frontend, Neon PostgreSQL database, and Vercel Blob for media storage.</p>
+
+  <table>
+    <tr><th>Service</th><th>Free Tier</th><th>Purpose</th></tr>
+    <tr><td>Vercel</td><td>100 GB-hours serverless execution</td><td>Hosting the Next.js app + Payload CMS</td></tr>
+    <tr><td>Neon</td><td>0.5 GB storage</td><td>PostgreSQL database</td></tr>
+    <tr><td>Vercel Blob</td><td>1 GB storage</td><td>Media file storage</td></tr>
+  </table>
+
+  <h3>Environment Configuration</h3>
+  <pre>DATABASE_URL=postgresql://...
+PAYLOAD_SECRET=your-secret-key
+NEXT_PUBLIC_SERVER_URL=https://piyumdakshina.com</pre>
+
+  <h3>Access Points</h3>
+  <table>
+    <tr><th>Endpoint</th><th>URL</th></tr>
+    <tr><td>Primary Site</td><td><code>https://piyumdakshina.com</code></td></tr>
+    <tr><td>Admin Panel</td><td><code>https://piyumdakshina.com/admin</code></td></tr>
+    <tr><td>REST API</td><td><code>https://piyumdakshina.com/api</code></td></tr>
+    <tr><td>GraphQL API</td><td><code>https://piyumdakshina.com/api/graphql</code></td></tr>
+  </table>
+</div>
+
+<!-- ==================== 8. DIFFERENTIATION ==================== -->
+<div class="page-break"></div>
+<h2>8. Differentiation &amp; Branding</h2>
+
+<div class="section">
+  <p>What makes The Piyumverse uniquely different from a generic portfolio website:</p>
+
+  <table>
+    <tr><th>Aspect</th><th>Generic Website</th><th>The Piyumverse</th></tr>
+    <tr><td>Domain</td><td>my-portfolio.netlify.app</td><td><strong>piyumdakshina.com</strong></td></tr>
+    <tr><td>System Name</td><td>None</td><td><strong>"The Piyumverse"</strong></td></tr>
+    <tr><td>Theme</td><td>Random colors</td><td><strong>Obsidian Teal</strong> — custom, cohesive design language</td></tr>
+    <tr><td>Voice</td><td>"I am a developer"</td><td><strong>"I want to be like Piyum."</strong></td></tr>
+    <tr><td>AI Assistant</td><td>None</td><td><strong>AegisVue Butler</strong> — AI admin agent</td></tr>
+    <tr><td>Content</td><td>Resume + generic blogs</td><td>Projects + Philosophy + Athletics + Legacy</td></tr>
+    <tr><td>SEO Strategy</td><td>Vague keywords</td><td>Targets ONLY <strong>"Piyum Dakshina"</strong></td></tr>
+    <tr><td>Footer</td><td>&copy; 2026</td><td><strong>"Built with Dignity by Piyum Dakshina."</strong></td></tr>
+  </table>
+
+  <h3>Custom Branding Elements</h3>
+  <table>
+    <tr><th>Element</th><th>Implementation</th></tr>
+    <tr><td>Favicon</td><td>Custom icon or Piyum's photo</td></tr>
+    <tr><td>404 Page</td><td>"Oops. Even I can't find that. Want to see my projects instead?"</td></tr>
+    <tr><td>Login Page</td><td>"Welcome back, Piyum." with Obsidian Teal colors</td></tr>
+    <tr><td>Footer Signature</td><td>"Built with Dignity by Piyum Dakshina."</td></tr>
+  </table>
+</div>
+
+<!-- ==================== 9. SUMMARY ==================== -->
+<div class="page-break"></div>
+<h2>9. Summary — System Component Map</h2>
+
+<div class="section">
+  <table>
+    <tr><th>Component</th><th>Technology</th><th>Purpose</th></tr>
+    <tr><td>Frontend Framework</td><td>Next.js 15</td><td>Renders pages, handles routing, SEO optimization</td></tr>
+    <tr><td>CMS &amp; Backend</td><td>Payload CMS 3.x</td><td>Content management, admin panel, REST/GraphQL API</td></tr>
+    <tr><td>Database</td><td>PostgreSQL (Neon)</td><td>Stores all content and user data</td></tr>
+    <tr><td>File Storage</td><td>Vercel Blob</td><td>Stores images, PDFs, videos</td></tr>
+    <tr><td>AI Assistant</td><td>payload-ai-agent</td><td>Natural-language admin commands (AegisVue Butler)</td></tr>
+    <tr><td>SEO</td><td>Advanced SEO Plugin</td><td>Structured data, meta tags, sitemaps, OG images</td></tr>
+    <tr><td>Analytics</td><td>Analytics Dashboard</td><td>Traffic and user behavior tracking</td></tr>
+    <tr><td>Design System</td><td>Obsidian Teal</td><td>Custom colors, typography, glassmorphism effects</td></tr>
+    <tr><td>Hosting</td><td>Vercel</td><td>Deployment, serverless functions, edge network</td></tr>
+    <tr><td>Domain</td><td>piyumdakshina.com</td><td>Permanent digital address</td></tr>
+  </table>
+
+  <h3>Quick Reference Card</h3>
+  <div class="grid-2">
+    <div class="grid-item">
+      <h4>🏛️ Ecosystem Name</h4>
+      <p><strong>The Piyumverse</strong><br>(The Piyum Dakshina Digital Ecosystem)</p>
+    </div>
+    <div class="grid-item">
+      <h4>🎨 Design System</h4>
+      <p><strong>Obsidian Teal</strong><br>#0B0F19 · #00D4FF · #7C3AED</p>
+    </div>
+    <div class="grid-item">
+      <h4>🤖 AI Assistant</h4>
+      <p><strong>AegisVue Butler</strong><br>Natural language admin commands</p>
+    </div>
+    <div class="grid-item">
+      <h4>🏆 Flagship Product</h4>
+      <p><strong>AegisVue</strong><br>Solo product · AI-powered foundation</p>
+    </div>
+    <div class="grid-item">
+      <h4>🧰 CMS &amp; Backend</h4>
+      <p><strong>Payload CMS 3</strong> + Next.js 15<br>TypeScript · PostgreSQL</p>
+    </div>
+    <div class="grid-item">
+      <h4>🌐 Domain</h4>
+      <p><strong>piyumdakshina.com</strong><br>Permanent digital address</p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 10. VISION & LEGACY ==================== -->
+<div class="page-break"></div>
+<h2>10. Vision &amp; Legacy</h2>
+
+<div class="section">
+  <div class="card" style="font-size: 12pt; padding: 20px; border-left-width: 6px;">
+    <p style="font-size: 14pt; font-weight: 700; margin-bottom: 10px; color: #0B0F19;">"Information is Wealth. Protect Human Dignity. Break Barriers, Build Bridges."</p>
+    <p>When someone searches <strong>"Piyum Dakshina"</strong> — whether today or ten years from now — this is what they will find:</p>
+  </div>
+
+  <ol>
+    <li><strong>Google shows The Piyumverse first</strong> — your domain, your rules, your narrative.</li>
+    <li><strong>Your photo and name appear prominently</strong> — anchored via Wikimedia Commons and your own site.</li>
+    <li><strong>Your story is told in your own words</strong> — the About page, the Philosophy page, the origin story.</li>
+    <li><strong>Your projects are showcased with depth</strong> — AegisVue, LEAP, VR Chemistry Lab, and every build that shaped you.</li>
+    <li><strong>Your legacy is clear</strong> — a Sri Lankan innovator who built with dignity, protected humanity, and inspired a generation.</li>
+  </ol>
+
+  <p>That is how a child in Sri Lanka — or anywhere in the world — searches your name and says:</p>
+
+  <div style="text-align: center; margin: 30px 0; font-size: 18pt; font-weight: 700; color: #00D4FF;">
+    "I want to be like Piyum."
+  </div>
+
+  <p>This is not just a website. This is a digital legacy — permanent, unshakeable, and 100% yours.</p>
+</div>
+
+<!-- ==================== FOOTER ==================== -->
+<div class="footer">
+  <p><strong>The Piyumverse</strong> — The Piyum Dakshina Digital Ecosystem</p>
+  <p>Built with Dignity by Piyum Dakshina &bull; July 2026</p>
+  <p>piyumdakshina.com</p>
+</div>
+
+</body>
+</html>
